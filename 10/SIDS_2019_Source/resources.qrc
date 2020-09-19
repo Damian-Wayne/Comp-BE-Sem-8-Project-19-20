@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>images/tifr.png</file>
+        <file>images/fcrit.png</file>
+        <file>images/white.png</file>
+    </qresource>
+</RCC>
