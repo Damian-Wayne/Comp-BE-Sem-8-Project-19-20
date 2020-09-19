@@ -1,0 +1,64 @@
+pragma solidity ^0.4.24;
+
+contract Health{
+    address Owner;
+   
+    struct patient{
+        bool isuigenerated;
+        string name;
+        string appointTime;
+        string health_details;
+        string doctorname;
+        uint256 phone;
+       
+    }
+
+    mapping (address => patient) public patientmapping;
+    mapping (address => bool) public docmapping;
+   
+    constructor  (){
+        Owner = msg.sender;
+    }
+
+modifier onlyOwner(){
+   
+    require (Owner == msg.sender);
+    _;
+   
+}
+   
+    function setDoctor(address _address) onlyOwner{
+        require(!docmapping[_address]);
+        docmapping[_address]=true;
+    }
+
+    function setPatientData(string _name, string _appointTime, string _health_details,
+        uint256 _phone, string _doctorname) onlyOwner returns (address){
+        address unique = address(sha256(msg.sender, now));
+        require(! patientmapping[unique].isuigenerated);
+        patientmapping[unique].isuigenerated = true;
+         patientmapping[unique].name = _name;
+         patientmapping[unique].doctorname = _doctorname;
+         patientmapping[unique].appointTime = _appointTime;
+          patientmapping[unique].health_details = _health_details;
+           patientmapping[unique].phone = _phone;
+           
+         
+       
+        return unique;
+       
+    }
+       
+
+     function bookAppointment(address _unique, string _getAppoint) returns (string){
+       require(docmapping[msg.sender]);
+       if(keccak256(abi.encodePacked( patientmapping[_unique].appointTime)) != keccak256(abi.encodePacked(_getAppoint))){
+           return "check patient data";
+           
+       }    
+       
+       return "BOOKED APPOINTMENT SUCCESSFULLY";
+   }
+   
+   
+}
