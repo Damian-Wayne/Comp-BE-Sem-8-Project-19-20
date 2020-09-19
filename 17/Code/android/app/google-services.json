@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "917756527152",
+    "firebase_url": "https://pothole-scout-cf433.firebaseio.com",
+    "project_id": "pothole-scout-cf433",
+    "storage_bucket": "pothole-scout-cf433.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917756527152:android:f0dd2780697ac61776a3f5",
+        "android_client_info": {
+          "package_name": "com.fyp.pothole_scout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917756527152-9nheq7js9k5rgf8csufcgrb9r32fmbjt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fyp.pothole_scout",
+            "certificate_hash": "4ac5651911a36deb53f3b81908d616f9d5ca5225"
+          }
+        },
+        {
+          "client_id": "917756527152-qku7vrs0lkc58dov45m5bt3gv92u9cj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxuRZN7DJNxI2WxXGNOopad4XHWYne3l0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917756527152-qku7vrs0lkc58dov45m5bt3gv92u9cj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
