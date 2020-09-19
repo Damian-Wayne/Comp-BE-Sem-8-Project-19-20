@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>dtoxd : The Clean Digital Experience</title>
+        <link rel="stylesheet" type="text/css" href="css/pretty-checkbox.css">
+        <link rel="stylesheet" type="text/css" href="css/loading-bar.css">
+        <link rel="stylesheet" type="text/css" href="css/dtoxd.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script>window.$ = window.jQuery = require('jquery');</script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="title-bar">
+                <div class='title'>dtoxd: The Clean Digital Experience
+                    <div class="buttons">
+                        <div class="action-button" id="close-button">&times;</div>
+                        <div class="action-button" id="maximize-button" style="color:#C6CDC7">+</div>
+                        <div class="action-button" id="minimize-button">-</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="font-family: Poppins;
+            font-size: 14px;
+            font-weight: thin;
+            font-stretch: normal;
+            font-style: normal;">
+                <div class="column" id="side-panel">
+                    <div class="menu">
+                        <div class="menu-item" id="home" onclick="activateTab(this.id)">
+                            <img class="menu-icon" id="home-icon-white" src="img/home.svg" style="height: 25px;">
+                            <img class="menu-icon-black" id="home-icon-black" src="img/home_black.svg">
+                            Home
+                            </div>
+                        <div class="menu-item" id="scan-now" onclick="activateTab(this.id)">
+                            <img class="menu-icon" id="scan-icon-white" src="img/Scan_white.png">
+                            <img class="menu-icon-black" id="scan-now-icon-black" src="img/Scan.png">
+                            Scan Now
+                        </div>
+                        <div class="menu-item" id="schedule-scan" onclick="activateTab(this.id)">
+                            <img class="menu-icon" id="schedule-icon-white" src="img/Schedule_white.png">
+                            <img class="menu-icon-black" id="schedule-scan-icon-black" src="img/schedule.png">
+                            Schedule Scan
+                        </div>
+                        <div class="menu-item" id="real-time" onclick="activateTab(this.id)">
+                            <img class="menu-icon" id="realtime-icon-white" src="img/Real_time_white.png">
+                            <img class="menu-icon-black" id="real-time-icon-black" src="img/Realtime.png">
+                            Real-Time
+                            <!-- <img class="menu-icon" id="realtime-icon-white" src="img/Real_time_white.png"> -->
+                        </div>
+                    
+                        <div class="menu-item" id="settings" onclick="activateTab(this.id)">
+                            <img class="menu-icon" id="settings-icon-white" src="img/SettingsWhite.png">
+                            <img class="menu-icon-black" id="settings-icon-black" src="img/Setting.svg">
+                            Settings
+                        </div>
+                    </div>
+                </div>
+                <div class="column" id="main-panel">
+                    <!-- <div class="filler-dev" id="top-filler"></div> -->
+                    <div class="filler-dev" id="middle-filler">
+                        <div class="content-card-parent" id="home-parent">
+                            <div class="content-card" id="home-content">
+                                <div id="system-state" style="text-align: center;">
+                                    <img src="img/shield_green.svg"> 
+                                </div>
+                                <div class="main-instruction" style="font-family: Poppins;
+                                font-size: 21px;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                font-style: normal;text-align: center; padding-top: 15px;">
+                                    <span>You're Protected Against Explicit Content</span>
+                                </div>
+                                <div class="helper-text" style="padding-top: 10px; padding-left:0px; text-align: center;">
+                                    We won't share your information with anyone. All processing happens and remains on your own machine.
+                                </div>
+                                <div class="main-instruction" style="font-size: 1em; font-weight: bold;text-align: center; padding-top: 15px;">
+                                    <span>Last scanned on 23rd November, 2019 at 2:35 PM</span>
+                                </div>
+                                <div class="icon-container" style="margin-top:25px; text-align: center; padding-left:15%;padding-right:15%">
+                                    <div class="icon-box" style="float:left">
+                                        <img id="scan-green" src="img/scan_green.svg">
+                                    </div>
+                                    <div class="icon-box" style="display:inline-block">
+                                        <img id="directory-green" src="img/directory_green.svg">
+                                    </div>
+                                    <div class="icon-box" style="float:right">
+                                        <img id="real-time-green" src="img/real_time_green.svg">
+                                    </div>
+                                </div>
+                                <div id="home-scan-now">
+                                    <button class="button" id="scan-now-button" onclick="activateTab('scan-now')">Scan Now</button>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!-- SCAN NOW Panel -->
+                        <div class="content-card-parent" id="scan-now-parent">
+                            <div class='content-card' id="scan-now-content">
+                                <div class="main-instruction" style="font-size: 1.25em; font-weight: bold;">
+                                    <span>Choose your preferences.</span>
+                                </div>
+                                <div class="helper-text">
+                                    Select the type of content that you would like to scan.
+                                </div>
+                                <div class="content-option">
+                                    <div class="pretty p-default p-curve p-pulse">
+                                        <input type="checkbox" id="image-scan-checkbox" value="img">
+                                        <div class="state p-success-o">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>&nbsp;&nbsp;Images</label>
+                                        </div>
+                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="pretty p-default p-curve p-pulse">
+                                        <input type="checkbox" id="video-scan-checkbox" onclick="videoCheck()" value="vid">
+                                        <div class="state p-success-o">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>&nbsp;&nbsp;Videos</label>
+                                        </div>
+                                    </div>
+                                    <div class="slider-container" id="slider-container">
+                                        <div class="helper-text" style="padding-left:0px;padding-right:30px">
+                                            Scan Precision
+                                        </div>
+                                        <input type="range" min="1" max="5" value="1" class="slider" id="precisionSlider">
+                                    </div>
+                                </div>
+                                <div class="scan-option" id="scan-options">
+                                    <button class="button" id="quick" onclick="scan_trigger(this.id)">Quick Scan</button>
+                                    <button class="button" id="deep" onclick="scan_trigger(this.id)">Deep Scan</button>
+                                </div>
+                                <div class="progress-bar" id="progress-bar">
+                                    <div data-preset="energy" data-fill="data:ldbar/res,gradient(45,2,#00dd80,#11f797,#86f78a)" class="ldBar" data-aspect-ratio="none" data-fill-background-extrude="0" data-value="0" data-bbox="10 5 80 10" style="width:85%;height:60px;"></div>
+                                    <div>    
+                                        <button class="button" id="showResults" onclick="scan_trigger(this.id)" style="background-color:#cf0a0a;position:absolute;top:8px" >Stop</button>
+                                    </div>
+                                </div>
+                                <div id="snackbar">Please select the type of content (images or videos) to scan !</div>
+                            </div>
+                        </div>
+
+
+                        <!-- Results Panel -->
+                        <div class="content-card-parent" id="showResults">
+                            <div class='content-card' id="showResults-content">
+                                <div class="main-instruction" style="font-family: Poppins;
+                                font-size: 21px;
+                                font-weight: normal;
+                                font-stretch: normal;
+                                font-style: normal;text-align: center; padding-top: 15px;">
+                                    <span>Results</span>
+                                </div>
+                                <div class="helper-text" style="padding-top: 10px; padding-left:0px; text-align: center;">
+                                    <p id="explicitListHeader"> Here's all that you should worry about.
+                                   
+                                        
+                                    </p>
+                                    <ul id="explicitList"></ul>
+                                </div>
+                                
+                                <button class="button" id="ok" onclick="scan_trigger(this.id)">OK</button>
+                            </div>
+
+                        </div>
+
+                        <!-- Schedule Scan Panel -->
+                        <div class="content-card-parent" id="schedule-scan-parent">
+                            <div class='content-card' id="schedule-scan-content">
+                                <div class="main-instruction" style="font-size: 1.25em; font-weight: bold;">
+                                    <span>Choose your preferences.</span>
+                                </div>
+                                <div class="helper-text">
+                                    <div class="dropdown" id="scan-type-dropdown">
+                                        Scan Type :
+                                        <select>
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly">Weekly</option>
+                                            <option value="fortnightly">Fortnightly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <button class="button" id="schedule" onclick="">Schedule</button>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!-- REAL TIME SCENE -->
+                        <div class="content-card-parent" id="real-time-parent">
+                            <div class='content-card' id="real-time-content">
+                                <div class="main-instruction" style="font-size: 1.25em; font-weight: bold;">
+                                    <span>Choose your preferences.</span>
+                                </div>
+                                <div class="helper-text">
+                                    Select the type of content you want to look out for.
+                                </div>
+                                <div class="content-option">
+                                    <div class="pretty p-default p-curve p-pulse">
+                                        <input type="checkbox" id="image-scan-checkbox">
+                                        <div class="state p-success-o">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>&nbsp;&nbsp;Images</label>
+                                        </div>
+                                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="pretty p-default p-curve p-pulse">
+                                        <input type="checkbox" id="video-scan-checkbox" onclick="videoCheck()">
+                                        <div class="state p-success-o">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>&nbsp;&nbsp;Videos</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scan-option" id="scan-options">
+                                    <button class="button" id="directoryWatcher_dir">Set Directory Watcher</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- SETTINGS -->
+                        <div class="content-card-parent" id="settings-parent">
+                            <div class='content-card' id="settings-content">
+                                <div class="main-instruction" style="font-size: 1.25em; font-weight: bold;">
+                                <span>Settings</span>
+                                </div>
+                                <div class="option">
+                                    <a href="">Change Password</a> <br>
+                                    <a href="">Face Unlock</a> <br>
+                                    <a href="">Scan Settings</a> <br>
+                                    <a href="">Help</a> <br>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="filler-dev" id="bottom-filler"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/titlebarOptionHandler.js"></script>
+        <script type="text/javascript" src="js/loading-bar.js"></script>
+        <script type="text/javascript" src="js/commonActions.js"></script>
+    </body>
+</html>
