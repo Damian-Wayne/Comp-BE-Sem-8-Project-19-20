@@ -1,0 +1,25 @@
+[debug] [2019-11-01T07:12:09.139Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T07:12:09.143Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-11-01T07:12:09.143Z] CLI Version:   7.6.2
+[debug] [2019-11-01T07:12:09.143Z] Platform:      win32
+[debug] [2019-11-01T07:12:09.143Z] Node Version:  v12.13.0
+[debug] [2019-11-01T07:12:09.145Z] Time:          Fri Nov 01 2019 00:12:09 GMT-0700 (Pacific Daylight Time)
+[debug] [2019-11-01T07:12:09.145Z] ----------------------------------------------------------------------
+[debug] [2019-11-01T07:12:09.145Z] 
+[debug] [2019-11-01T07:12:09.162Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-11-01T07:12:09.163Z] > authorizing via signed-in user
+[debug] [2019-11-01T07:12:09.163Z] [iam] checking project webpatient-578f8 for permissions ["firebase.projects.get"]
+[debug] [2019-11-01T07:12:09.166Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/webpatient-578f8:testIamPermissions  
+
+[debug] [2019-11-01T07:12:10.984Z] <<< HTTP RESPONSE 200
+[debug] [2019-11-01T07:12:10.990Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/webpatient-578f8  
+ 
+[debug] [2019-11-01T07:12:11.404Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\admin'...
+[info] 
+[debug] [2019-11-01T07:12:11.422Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/webpatient-578f8/webApps/-/config  
+ 
+[debug] [2019-11-01T07:12:12.710Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
